@@ -1,0 +1,10 @@
+The NG50 : Whatshap stats
+Phased Block N50：To eliminate the impact of switch errors on phasing accuracy, we introduced the Phased Block N50,
+by splitting blocks at switch error positions. This metric aims to offer a more realistic assessment of the
+effective phase block length.
+Usage:
+python extract_switch_error.py -iswitch_error switch_error.tsv -ivcf phased.vcf -ivcf_truth truth.vcf -ovcf phased_no_swtich_error.vcf
+-iswitch_error --The input Switch_error file Whatshap compare
+-ivcf --The input VCF file, phased by Whatshap, Hapcut2, HapBridge.
+-ivcf_truth --The benchmark file
+-ovcf --The output vcf file.
