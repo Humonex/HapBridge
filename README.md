@@ -42,7 +42,20 @@ conda install pysam
 
 # Use a specific feature
 python bridge.py phased.vcf.gz haplotagged.bam HapBridge_phased.vcf -t 30
+
+# Required arguments:
+phased.vcf.gz --The SNP-based phasing vcf file (Hapcut2 or Whatshap)
+haplotagged.bam --The read tagged by whatshap harlot
+HapBridge_phased.vcf --The phasing result bt HapBridge
+-t  --thread --HapBridge supports multi-threaded operation
 ```
+
+## A complete experimental process
+
+phased.vcf.gz --The SNP-based phasing vcf file (Hapcut2 or Whatshap)
+haplotagged.bam --The read tagged by whatshap harlot
+HapBridge_phased.vcf --The phasing result bt HapBridge
+-t  --thread --HapBridge supports multi-threaded operation
 
 
 ## License
