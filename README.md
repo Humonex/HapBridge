@@ -4,41 +4,31 @@ HapBridge: impoving phase performance using methylation in long reads
 
 ## Introduction
 
-> we propose HapBridge, which corrects and bridges SNP-based phased blocks by selecting haplotype-specific methylation and utilizing the consistency of methylation signals.
+> We propose HapBridge, which corrects and bridges SNP-based phased blocks by selecting haplotype-specific methylation and utilizing the consistency of methylation signals.
 
 ## Installation and Usage
 
 ### Prerequisites
 
-Python version, third-party libraries:
-
 ```sh
 - Python >= 3.8
-- pip >= 20.0
+- pysam >= 0.14
 ```
 
 ### Installation
 
-Provide the steps to install the project:
-
 ```sh
 # Clone the repository
-$ git clone https://github.com/username/project_name.git
+$ git clone https://github.com/Humonex/HapBridge.git
 
 # Navigate to the project directory
-$ cd project_name
-
-# Install dependencies
-$ pip install -r requirements.txt
-```
+$ cd HapBridge
 
 ### Usage
 
-Provide the basic usage instructions for the project:
-
 ```sh
 # Run the main script
-$ python main.py
+$ python bridge.py phased.vcf.gz haplotagged.bam HapBridge_phased.vcf -t 30
 ```
 
 Detail any configuration options or command-line arguments (if applicable).
@@ -66,13 +56,6 @@ If the project provides demos or notebooks, include links to them.
 
 ## Contribution Guidelines
 
-Contributions are welcome! Please follow these steps to get involved:
-
-1. Fork this repository.
-2. Create a feature branch: `git checkout -b feature-branch`.
-3. Commit your changes: `git commit -m 'Add new feature'`.
-4. Push to the branch: `git push origin feature-branch`.
-5. Create a Pull Request.
 
 ## License
 
