@@ -26,8 +26,8 @@ $ cd HapBridge
 
 ### Usage
 
-```sh
-# Run the main script
+```sh 
+# Run the main python.py
 $ python bridge.py
 ```
 
@@ -44,11 +44,10 @@ conda install pysam
 python bridge.py phased.vcf.gz haplotagged.bam HapBridge_phased.vcf -t 30
 ```
 
-If the project provides demos or notebooks, include links to them.
 
 ## License
 
-This project is distributed under the [MIT License](LICENSE).
+This project is distributed under the [GNU General Public License v3.0](LICENSE).
 
 ---
 
