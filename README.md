@@ -28,34 +28,23 @@ $ cd HapBridge
 
 ```sh
 # Run the main script
-$ python bridge.py phased.vcf.gz haplotagged.bam HapBridge_phased.vcf -t 30
+$ python bridge.py
 ```
 
-Detail any configuration options or command-line arguments (if applicable).
-
-## Features
-
-- Feature 1: Briefly describe the feature.
-- Feature 2: Briefly describe the feature.
-- Feature 3: Briefly describe the feature.
 
 ## Usage Examples
 
-Show examples of how to use the project, including code snippets and expected output:
 
 ```python
 # Import the library
-from project import feature
+conda create -n HapBridge python=3.9
+conda install pysam
 
 # Use a specific feature
-result = feature.some_function(params)
-print(result)
+python bridge.py phased.vcf.gz haplotagged.bam HapBridge_phased.vcf -t 30
 ```
 
 If the project provides demos or notebooks, include links to them.
-
-## Contribution Guidelines
-
 
 ## License
 
