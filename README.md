@@ -1,7 +1,6 @@
 # Project Name
 
-HapBridge: Improving Phasing Performance and Correcting Switch Errors Using Methylation in Long Reads
-
+HapBridge: A Methylation-Guided Approach for Correcting Switch Errors and Bridging Phased Blocks in Long-Read Phasing
 ## Introduction
 
 > We propose HapBridge, which corrects and bridges SNP-based phased blocks by selecting haplotype-specific methylation and utilizing the consistency of methylation signals.
