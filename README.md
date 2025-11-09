@@ -1,6 +1,6 @@
 # Project Name
 
-HapBridge: impoving phase performance using methylation in long reads
+HapBridge: Improving Phasing Performance and Correcting Switch Errors Using Methylation in Long Reads
 
 ## Introduction
 
