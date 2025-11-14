@@ -85,4 +85,5 @@ Note:
 ## License
 
 This project is distributed under the [GNU General Public License v3.0](LICENSE).
+Preprints can be obtained from the following link：https://doi.org/10.1101/2025.11.07.687303
 
