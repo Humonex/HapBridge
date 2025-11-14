@@ -369,7 +369,7 @@ class MethBridger(Bridger):
         self.options["margin"] = 100000
         
         # read 有多少meth就可以判断单倍型
-        self.options["read_count"] = 3
+        self.options["read_count"] = 5
         self.options["read_rate"] = 0.6
         self.find_switch_time = 0
         self.bridge_two_blocks_time = 0
@@ -613,7 +613,7 @@ class MethBridger(Bridger):
             return valid_locs
 
         def meth_options(self):
-            return 4, 0.3, 0.3
+            return 8, 0.3, 0.3
         
         global zero_count
         global no_zero_count
@@ -1019,7 +1019,7 @@ class MethBridger(Bridger):
             self.opts = opts
 
         def meth_options(self):
-            return 13, 0.3, 0.4
+            return 15, 0.3, 0.4
 
         def collect_meths(self):
             #logger.info("collect_meths(Block)")
