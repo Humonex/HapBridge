@@ -42,6 +42,7 @@ $ git clone https://github.com/vibansal/HapCUT2.git
 ```python
 # Import the library
 conda create -n HapBridge python=3.9
+conda activate HapBridge
 conda install pysam
 conda install whatshap
 conda config --add channels conda-forge
@@ -54,8 +55,8 @@ python bridge.py phased.vcf.gz haplotagged.bam HapBridge_phased.vcf -t 30
 
 # Required arguments:
 phased.vcf.gz --The SNP-based phasing vcf file (Hapcut2 or Whatshap)
-haplotagged.bam --The read tagged by whatshap harlot
-HapBridge_phased.vcf --The phasing result bt HapBridge
+haplotagged.bam --The read tagged by whatshap haplotag
+HapBridge_phased.vcf --The phasing result by HapBridge
 -t  --thread --HapBridge supports multi-threaded operation
 ```
 
