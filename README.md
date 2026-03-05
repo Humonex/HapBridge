@@ -8,7 +8,7 @@ HapBridge: A Methylation-Guided Approach for Correcting Switch Errors and Bridgi
 ## Installation and Usage
 
 ### Prerequisites
-
+Ensure you have the following tools installed:
 ```sh
 - Python >= 3.8
 - pysam >= 0.14
@@ -16,6 +16,7 @@ HapBridge: A Methylation-Guided Approach for Correcting Switch Errors and Bridgi
 - HapCUT2 = v1.3.4
 - Whatshap = 1.7
 - clair3 docker version >= v0.1-r12
+- BGZIP (bgzip tabix)
 ```
 
 ### Installation
@@ -26,12 +27,12 @@ $ git clone https://github.com/Humonex/HapBridge.git
 
 # Navigate to the project directory
 $ cd HapBridge
+$ git clone https://github.com/vibansal/HapCUT2.git
 
 ### Usage
 
 ```sh 
 # Run the main python.py
-$ python bridge.py
 ```
 
 
@@ -42,6 +43,11 @@ $ python bridge.py
 # Import the library
 conda create -n HapBridge python=3.9
 conda install pysam
+conda install whatshap
+conda config --add channels conda-forge
+conda config --add channels bioconda
+conda install whatshap
+whatshap --version (1.7)
 
 # Use a specific feature
 python bridge.py phased.vcf.gz haplotagged.bam HapBridge_phased.vcf -t 30
@@ -61,19 +67,24 @@ HapBridge_phased.vcf --The phasing result bt HapBridge
 
 The SNP called by Clair3 https://github.com/HKU-BAL/Clair3
 
-# SNP Phasing
+# SNP Phasing (whatshap)
 
-whatshap phase -o phased.vcf --reference=reference.fasta input.vcf input.bam --ignore-read-groups
+whatshap phase -o whatshap_phased.vcf --reference=reference.fasta input.vcf input.bam --ignore-read-groups
 bgzip phased.vcf
 tabix -p vcf phased.vcf.gz
 
+# or SNP Phasing (HapCUT2)
+cd HapBridge/HapCUT2
+./build/extractHAIRS  --ont 1 --bam input.bam --VCF input.vcf --out fragment_file --ref reference.fasta
+./build/HAPCUT2 --fragments fragment_file --VCF input.vcf --output haplotype_output_file_hapcut2
+
 # Whatshap haplotag: Tagging reads by haplotype
 
-whatshap haplotag -o haplotagged.bam --reference reference.fasta phased.vcf.gz alignments.bam
+whatshap haplotag -o haplotagged.bam --reference reference.fasta haplotype_output_file_hapcut2.vcf.gz(or whatshap_phased.vcf.gz) input.bam
 samtools index haplotagged.bam
 
 # HapBridge
-python bridge.py phased.vcf.gz haplotagged.bam HapBridge_phased.vcf -t 30
+python bridge.py haplotype_output_file_hapcut2.vcf.gz haplotagged.bam HapBridge_phased.vcf -t 30
 
 ```
 ## NOTE
