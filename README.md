@@ -13,7 +13,8 @@ HapBridge: A Methylation-Guided Approach for Correcting Switch Errors and Bridgi
 - Python >= 3.8
 - pysam >= 0.14
 - samtools >= 1.18
-- Whatshap >= 1.7
+- HapCUT2 = v1.3.4
+- Whatshap = 1.7
 - clair3 docker version >= v0.1-r12
 ```
 
