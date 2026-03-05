@@ -29,11 +29,6 @@ $ git clone https://github.com/Humonex/HapBridge.git
 $ cd HapBridge
 $ git clone https://github.com/vibansal/HapCUT2.git
 
-### Usage
-
-```sh 
-# Run the main python.py
-```
 
 
 ## Usage Examples
