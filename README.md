@@ -28,7 +28,7 @@ $ git clone https://github.com/Humonex/HapBridge.git
 # Navigate to the project directory
 $ cd HapBridge
 $ git clone https://github.com/vibansal/HapCUT2.git
-
+```
 
 
 ## Usage Examples
@@ -91,10 +91,11 @@ Note:
 3. if pysam has MM tag reading error, please try this command: samtools view -bF 2304 -o output.bam input.bam
 
 ## RUN test_data
+```sh
 Step 1: Download the data from test_data(https://github.com/Humonex/HapBridge/tree/main/test_data)
 Step 2：Ensure you have the Prerequisites installed
 Step 3: $ python bridge.py chr1_8911215-10002030.vcf.gz chr1_8911215-10002030_1000_reads.bam chr1_8911215-10002030_HapBridge_phased.vcf -t 30
-
+```
 ## License
 
 This project is distributed under the [GNU General Public License v3.0](LICENSE).
