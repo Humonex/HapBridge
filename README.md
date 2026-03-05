@@ -36,17 +36,17 @@ $ git clone https://github.com/vibansal/HapCUT2.git
 
 ```python
 # Import the library
-conda create -n HapBridge python=3.9
-conda activate HapBridge
-conda install pysam
-conda install whatshap
-conda config --add channels conda-forge
-conda config --add channels bioconda
-conda install whatshap
-whatshap --version (1.7)
+$ conda create -n HapBridge python=3.9
+$ conda activate HapBridge
+$ conda install pysam
+$ conda install whatshap
+$ conda config --add channels conda-forge
+$ conda config --add channels bioconda
+$ conda install whatshap
+$ whatshap --version (1.7)
 
 # Use a specific feature
-python bridge.py phased.vcf.gz haplotagged.bam HapBridge_phased.vcf -t 30
+$ python bridge.py phased.vcf.gz haplotagged.bam HapBridge_phased.vcf -t 30
 
 # Required arguments:
 phased.vcf.gz --The SNP-based phasing vcf file (Hapcut2 or Whatshap)
@@ -65,22 +65,22 @@ The SNP called by Clair3 https://github.com/HKU-BAL/Clair3
 
 # SNP Phasing (whatshap)
 
-whatshap phase -o whatshap_phased.vcf --reference=reference.fasta input.vcf input.bam --ignore-read-groups
-bgzip phased.vcf
-tabix -p vcf phased.vcf.gz
+$ whatshap phase -o whatshap_phased.vcf --reference=reference.fasta input.vcf input.bam --ignore-read-groups
+$ bgzip phased.vcf
+$ tabix -p vcf phased.vcf.gz
 
 # or SNP Phasing (HapCUT2)
-cd HapBridge/HapCUT2
-./build/extractHAIRS  --ont 1 --bam input.bam --VCF input.vcf --out fragment_file --ref reference.fasta
-./build/HAPCUT2 --fragments fragment_file --VCF input.vcf --output haplotype_output_file_hapcut2
+$ cd HapBridge/HapCUT2
+$ ./build/extractHAIRS  --ont 1 --bam input.bam --VCF input.vcf --out fragment_file --ref reference.fasta
+$ ./build/HAPCUT2 --fragments fragment_file --VCF input.vcf --output haplotype_output_file_hapcut2
 
 # Whatshap haplotag: Tagging reads by haplotype
 
-whatshap haplotag -o haplotagged.bam --reference reference.fasta haplotype_output_file_hapcut2.vcf.gz(or whatshap_phased.vcf.gz) input.bam
-samtools index haplotagged.bam
+$ whatshap haplotag -o haplotagged.bam --reference reference.fasta haplotype_output_file_hapcut2.vcf.gz(or whatshap_phased.vcf.gz) input.bam
+$ samtools index haplotagged.bam
 
 # HapBridge
-python bridge.py haplotype_output_file_hapcut2.vcf.gz haplotagged.bam HapBridge_phased.vcf -t 30
+$ python bridge.py haplotype_output_file_hapcut2.vcf.gz haplotagged.bam HapBridge_phased.vcf -t 30
 
 ```
 ## NOTE
@@ -93,7 +93,7 @@ Note:
 ## RUN test_data
 Step 1: Download the data from test_data(https://github.com/Humonex/HapBridge/tree/main/test_data)
 Step 2：Ensure you have the Prerequisites installed
-Step 3: python bridge.py chr1_8911215-10002030.vcf.gz chr1_8911215-10002030_1000_reads.bam chr1_8911215-10002030_HapBridge_phased.vcf -t 30
+Step 3: $ python bridge.py chr1_8911215-10002030.vcf.gz chr1_8911215-10002030_1000_reads.bam chr1_8911215-10002030_HapBridge_phased.vcf -t 30
 
 ## License
 
